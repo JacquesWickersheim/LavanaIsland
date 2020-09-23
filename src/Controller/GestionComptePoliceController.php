@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class GestionComptePoliceController extends AbstractController
 {
     /**
-     * @Route("/gestionComptePolice", name="gestionComptePolice")
+     * @Route("/staff/gestionComptePolice", name="gestionComptePolice")
      */
     public function index()
     {

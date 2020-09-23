@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ConcessController extends AbstractController
 {
     /**
-     * @Route("/concess", name="concess")
+     * @Route("/civil/concess", name="concess")
      */
     public function index()
     {

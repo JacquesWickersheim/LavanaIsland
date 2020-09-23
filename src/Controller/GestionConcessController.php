@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class GestionConcessController extends AbstractController
 {
     /**
-     * @Route("/gestionConcess", name="gestionConcess")
+     * @Route("/staff/gestionConcess", name="gestionConcess")
      */
     public function index()
     {
