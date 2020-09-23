@@ -5,15 +5,15 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ReglementController extends AbstractController
+class MentionsController extends AbstractController
 {
     /**
-     * @Route("/reglement", name="reglement")
+     * @Route("/mentions", name="mentions")
      */
     public function index()
     {
-        return $this->render('reglement/index.html.twig', [
-
+        return $this->render('mentions/index.html.twig', [
+            'titreSite' => 'Lavana Island'
         ]);
     }
 }

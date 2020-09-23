@@ -1,20 +1,130 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ReglementController!{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <section class="container-fluid bg-dark text-center">
+        <section id="griseReglement" class="container">
+            <div class="row text-light">
+                <div class="col-md-12 py-5">
+                    <h1 class="text-danger">Règlement Général</h1>
+                </div>
+                <div class="col-md-12 py-2">
+                    <ul class="list-group text-light">
+                        <li class="list-group-item bg-dark">Les messages comportant de la nudité, des propos offensants ou du contenu trop explicite sont interdits.</li>
+                        <li class="list-group-item bg-dark">Le langage offensant ou un contenu offensant qui peut heurter la sensibilité de quelqu’un est interdit.</li>
+                        <li class="list-group-item bg-dark">Le spam en général est interdit.</li>
+                        <li class="list-group-item bg-dark">Les plaintes/requêtes doivent être formulées sur Discord dans .......... ou MP en privé un membre du STAFF.</li>
+                        <li class="list-group-item bg-dark">Les cyber menaces (DDOS, etc…) ou les menaces de toutes sortes sont interdites et seront prises au sérieux et sanctionnées.</li>
+                        <li class="list-group-item bg-dark">L’harcèlement d’une personne ciblée, d’un joueur ou d’un membre du STAFF ou le fait d’envoyer des messages de manière continuelle à un joueur ou un membre du STAFF ne sera pas toléré.</li>
+                        <li class="list-group-item bg-dark">La publicité de toutes sortes est interdite, pub pour d’autres serveurs, d’autres communautés GTA 5, etc…</li>
+                        <li class="list-group-item bg-dark">Les discussions portant sur des sujets comme la religion pouvant causer des conflits entre les joueurs sont interdites.</li>
+                        <li class="list-group-item bg-dark">Lavana Island est un serveur français, vous vous devez donc de parler français sur le Discord.</li>
+                        <li class="list-group-item bg-dark">Les channels ont été faits pour être utilisés, ainsi chaque channel a une utilité précise donc vérifiez bien tous les channels avant de poster quelque chose dans un channel qui n’est pas fait pour sa.</li>
+                        <li class="list-group-item bg-dark">Mettre un nom et prénom RP sur discord.</li>
+                        <li class="list-group-item bg-dark">Il est interdit de tirer profit d’éléments obtenus de manière Hors Roleplay (Discord, Chat In-Game, Stream, etc…)</li>
+                        <li class="list-group-item bg-dark">Votre pseudo RP (En jeu et discord) doit comporter un prénom plus un nom avec uniquement comme caractères A à Z. Les accents et tréma sont autorisés. Votre pseudo RP en jeu et sur Discord doivent être identiques.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12 py-5">
+                <h1 class="text-danger">Règlement RôlePlay</h1>
+            </div>
+            <div class="col-md-12 py-2">
+                <h5 class="text-warning">Règles de Base</h5>
+                <ul class="list-group bg-dark text-light">
+                    <li class="list-group-item bg-dark">Rester en vie : Votre but a tout pris est de rester vous est vos amis en vie, peu importe de quelle faction ou de quelle groupe vous venez. L'attitude de votre personnage devra aller dans cette logique.</li>
+                    <li class="list-group-item bg-dark">"Freekill" : Le Freekill est considéré comme un meurtre sans raison d’une personne qui ne se savait pas en danger. Ou qui souhaite discuter avec son agresseur. Le Freekill est strictement interdit et les sanctions qui peut s’appliquer peux être l’ordre d’un bannissement à vie du serveur selon la gravité du Freekill.</li>
+                    <li class="list-group-item bg-dark">"Carkill" : Tuer tous joueurs avec un véhicule est considéré comme un Carkill. Sauf en cas d’accident de la route ou si cela est justifié par l’action de la scène.</li>
+                    <li class="list-group-item bg-dark">"StreamHack" et "Stalking" est interdit.</li>
+                    <li class="list-group-item bg-dark">"Retour sur zone/Action" : il est interdit de revenir dans une zone d'un rayon de 300 mètres du lieu d'une action ou de participer à l'action si vous êtes morts pendant le déroulement de celle-ci.(Cette règle ne s'applique pas si la mort est due à un bug du jeu). Une action est considérée comme terminée si aucun acte RP ou tire n'a eu lieu depuis 5 minutes.</li>
+                    <li class="list-group-item bg-dark"> "Action Super Héro" : Les actions suicidaires dites "Super Héro" sont interdites. Lorsque la situation est défavorable, (ennemi en surnombre, véhicule blindé ou encerclé par l’ennemi etc …) rappelez-vous que vous devez essayer de rester en vie. Engager un combat armé pour "Mourir en tuant le plus grand nombre" sera sanctionné.</li>
+                    <li class="list-group-item bg-dark">Les Pannes de véhicules :  il est interdit de ranger votre véhicule dans votre garage lorsqu'il est abîmé ou plus en état de conduire. Privilégier d’appeler des mécanos.</li>
+                    <li class="list-group-item bg-dark">Les Armes :  il est interdit de sortir des armes imposantes (Ak, M4, batte de baseball etc...) lorsque vous n’avez pas de sac sur vous ou alors lorsque vous êtes proche du coffre de votre véhicule (dans ce cas vous pourrez pas la ranger sauf si vous êtes proche du coffre).</li>
+                    <li class="list-group-item bg-dark">L'utilisation des touches Alt+F4 est strictement interdite.</li>
+                    <li class="list-group-item bg-dark">Il est interdit, pour un joueur ou un groupe de joueurs, de s’incruster dans un combat entamé.</li>
+                    <li class="list-group-item bg-dark">Les joueurs doivent forcément avoir une unité au sol (véhicule), pour voler un individu. Le vol en hélicoptère est donc interdit.</li>
+                    <li class="list-group-item bg-dark">"Sommation Verbale" : Avant de faire usage de votre arme dans le but d'atteindre à la vie d'autrui, vous vous devez d'exprimer clairement vos intentions. Dans le cas où votre cible ne coopère pas vous êtes autorisés à faire usage de votre arme. Vous ne pouvez pas tuer une personne qui vous annonce CLAIREMENT ses intentions de négocier.</li>
+                    <li class="list-group-item bg-dark">"Tir de Sommation" : Vous effectuez un tir de sommation en l'air afin de faire comprendre que vous êtes armés, si la personne ne montre aucun signe de coopération rapide (il faudra leur laisser le temps de réagir environ 5 seconde), vous êtes autorisé à effectuer un tir létal. Prenez note qu'un tir de sommation rend possible une réponse létale. Soyez donc sur vos gardes, cette méthode est à utiliser à vos risques et périls.</li>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/x512/Desktop/Développement Web/Sites sous Symfony/lavana/src/Controller/ReglementController.php'|file_link(0) }}">src/Controller/ReglementController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/x512/Desktop/Développement Web/Sites sous Symfony/lavana/templates/reglement/index.html.twig'|file_link(0) }}">templates/reglement/index.html.twig</a></code></li>
-    </ul>
-</div>
+                    <li class="list-group-item bg-dark">En cas de déclenchement d’une situation de combat, la LSPD disposent de l’autorité supérieure sur les civils et les Ambulanciers doivent se soumettre à leur autorité, sous peine d’être accusés d'insubordination et seront sanctionnés en jeu comme par le Staff.</li>
+                    <li class="list-group-item bg-dark">Les CHEVEUX : Ils ne poussent comme par magie, Exemple : Vous ne pouvez pas passer d’une coupe longue, à une coupe chauve pour reprendre quelque minute après votre coupe initiale. Vous pourrez prendre une coupe plus longue que à partir de 3 jours irl. Les perruques sont interdite.</li>
+                    <li class="list-group-item bg-dark">Les Ripoux sont autorisé dans la LSPD et chez les EMS mais a vos risques et péril !</li>
+                    <li class="list-group-item bg-dark">La diffusion de musique sur le jeu est autorisé à partir du moment où elle ne perturbe pas l'expérience de jeu des autres joueurs. Assurez-vous d'être isolés ou de ne pas mettre trop fort.</li>
+                    <li class="list-group-item bg-dark">Le Metagaming est lourdement sanctionnable, toute information concernant votre situation in game diffusée par un autre moyen que la radio discord, le téléphone sont interdites.</li>
+                    <li class="list-group-item bg-dark">Lorsque quelqu’un vous annonce que vous n’avez plus aucun moyen de communication, vous devez vous mettre en SOURD et MUET sur discord.</li>
+                    <li class="list-group-item bg-dark">Interdiction de reconnaître une personne masquée sauf détails apparents comme les tatouages.</li>
+                    <li class="list-group-item bg-dark">Il est interdit de se mettre AFK dans un coin pour toucher son salaire.</li>
+                    <li class="list-group-item bg-dark">Les “insultes” sont tolérées dans la limite du raisonnable.</li>
+                    <li class="list-group-item bg-dark">Les EMS ne sont pas autorisés à réanimer lors d’une fusillade, même si ils ont reçu un appel. Tant que les forces de l'ordre non pas sécurisé les lieux de la fusillade les EMS ne pourront pas intervenir. </li>
+                    <li class="list-group-item bg-dark">Les doubles comptes en jeu sont interdit.</li>
+                    <li class="list-group-item bg-dark">Le Parking Central n’est pas un circuit de formule 1.</li>
+                </ul>
+                <h5 class="py-5 text-warning">Zones Sécurisées</h5>
+                <p class="text-light">
+                    Une zone safe est une zone dans laquelle ne peut s'effectuer aucune action de combat, vente, achat, échange, vol ou braquage.
+                </p>
+                <p class="text-light">
+                    En revanche, elle peut se poursuivre si elle a débutée à l'extérieur de celle-ci.
+                </p>
+                <p class="text-light">
+                    Les zones sécurisées sont les suivantes:
+                </p>
+                <ul class="list-group bg-dark text-light">
+                    <li class="list-group-item bg-dark">Les Distributeurs de billets appelés ATM</li>
+                    <li class="list-group-item bg-dark">Hôpital</li>
+                    <li class="list-group-item bg-dark">Parking Central</li>
+                    <li class="list-group-item bg-dark">Le Gouvernement</li>
+                    <li class="list-group-item bg-dark">Bâtiment Avocat</li>
+                    <li class="list-group-item bg-dark">Les lieux de récoltes d'entreprise (Minimum 300m autour)</li>
+                    <li class="list-group-item bg-dark">Concessionnaire Automobile</li>
+                    <li class="list-group-item bg-dark">Aéroport</li>
+                    <li class="list-group-item bg-dark">Les Magasins de Vêtements</li>
+                    <li class="list-group-item bg-dark">Les Commissariat (sauf si un de vos amis ou un de vos membres a été arrêté, dans ce cas, 
+                    vous devrez avertir la police 3 min avant le raid. Voir le <a href="#raid">Chapitre</a> sur le raid.</li>
+                </ul>
+                <p class="text-light">
+                    Dans ces lieux, il est interdit de faire ces actions:
+                </p>
+                <ul class="list-group bg-dark text-light">
+                    <li class="list-group-item bg-dark">Kidnaping</li>
+                    <li class="list-group-item bg-dark">Braquer une personne</li>
+                    <li class="list-group-item bg-dark">Déclencher des bagarres ou frapper une personne</li>
+                    <li class="list-group-item bg-dark">Voler un véhicule</li>
+                    <li class="list-group-item bg-dark">Rester volontairement plus de 10 minutes sur place pour s'y réfugier et ne jouer aucune scène</li>
+                </ul>
+                <h5 class="py-5 text-warning">Prises d'otages</h5>
+                <ul class="list-group bg-dark text-light">
+                    <li class="list-group bg-dark">Il doit y avoir un minimum de 6 membres des forces de l’ordre connectés</li>
+                    <li class="list-group bg-dark">Il faut un minimum de 4 Ambulancier connecté pour en kidnapper UN mais il vous faut une raison valable (il faut au moins 3 Ambulancier disponible pour les autres joueurs)</li>
+                    <li class="list-group bg-dark">Il faut un minimum de 7 membres des forces de l’ordre  connecté pour en kidnapper UN mais il vous faut une raison valable (il faut au moins 6 membres des forces de l’ordre disponible pour la prise d'otage.)</li>
+                    <li class="list-group bg-dark">Le prix sera négocié directement par un négociateur (selon l'importance de l'otage) un otage ne pas dépasser les 50 000$.</li>
+                    <li class="list-group bg-dark">Lors des prises d’otages, le négociateur ne peut pas être pris en otage (sauf si le négociateur possède une arme sur lui ou dans son holster ou dans son sac à dos).</li>
+                    <li class="list-group bg-dark">Le négociateur doit toujours être en contact avec ses collègues, il doit donc toujours rester en possession de sa radio.</li>
+                    <li class="list-group bg-dark">Les transferts de fonds se font uniquement du négociateur aux preneurs d’otages.</li>
+                    <li class="list-group bg-dark">Lorsque vous prenez un otage en aucun cas vous ne pouvez lui demander de sortir de l’argent de l’ATM.</li>
+                    <li class="list-group bg-dark">Si l'otage doit sortir de la zone pour une raison non RP (déconnexion, ect...), prévenez le groupe opposé et il sera toujours considéré comme présent lors de la prise d'otage.</li>
+                    <li class="list-group bg-dark">Il est interdit de sécuriser l'argent de la prise d'otage dans une zone sécurisée avant la fin de l’action.</li>
+                    <li class="list-group bg-dark">Si personne ne veut payer de rançon, vous êtes en droit  d'abattre l'otage.</li>
+                    <li class="list-group bg-dark">Lors de la remise du butin les preneurs d'otages doivent absolument donner les otages concerner par la remise du butin.</li>
+                    <li class="list-group bg-dark">La LSPD a le droit de lancer un assaut dans quelconque circonstance cependant, si la LSPD tue l'otage, l'otage peut demander une dédommagement.</li>
+                </ul>
+                <h5 id="raid" class="py-5 text-warning">Les Raids</h5>
+                <ul class="list-group bg-dark text-light">
+                    <li class="list-group bg-dark">Pour un commissariat, il doit y avoir au moins 6 membres connectés, Policiers pour les commissariats.</li>
+                    <li class="list-group bg-dark">L'équipe qui attaque le commissariat doit être proportionnelle aux force de l'ordre.</li>
+                </ul>
+                <h5 class="py-4 text-warning">Les Braquages</h5>
+                <ul class="list-group bg-dark text-light">
+                    <li class="list-group bg-dark">Pour pouvoir braquer une épicerie, il faut la présence d'au moins 5 membres des forces de l'ordre.</li>
+                    <li class="list-group bg-dark">L'utilisation d'otages, pour faire pression, lors d'un braquage d'épicerie est autorisé mais Il est interdit d’avoir plus de 3 otages et il faut la présence d'au moins 6 membres des forces de l'ordre et il est obligatoire d’avoir une négociation entre les force de l’ordre et les braqueurs.</li>
+                    <li class="list-group bg-dark">Le staff a le droit de vous refusé l’action N°2 du Braquage.</li>
+                    <li class="list-group bg-dark">Il est interdit de racketter plus de 10 000$ à une personne dans la rue et vous ne pouvez pas braquer plus d'une fois par reboot.</li>
+                    <li class="list-group bg-dark">Il est interdit de forcer une personne à sortir de l’argent de son coffre ou compte bancaire pour lui racketter.</li>
+                    <li class="list-group bg-dark">Il est strictement interdit de braquer la LSPD, EMS, Entreprise ect... cela comprend les vols de tenues, les vols de véhicules, et le vol de matériel. En revanche vous pouvez les kidnapper pour obliger à faire une actions pour vous tout en restant dans son champ d’action. (l’obliger à soigner, réanimer). (ce n’est pas une monnaie d'échange ou un moyen de pression).</li>
+                    <li class="list-group bg-dark">Ne pas abuser des vols de véhicule !</li>
+                </ul>
+            </div>
+        </section>
+    </section>
 {% endblock %}
