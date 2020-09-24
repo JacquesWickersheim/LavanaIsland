@@ -38,8 +38,8 @@
                     <a class="nav-link disabled" href="{{ path('app_logout') }}">Se Déconnecter</a>
                 </li>
                 {% elseif is_granted('ROLE_CIVIL') %}
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="{{ path('profil') }}">Mon Profil</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('profil', {user: user.username}) }}">Mon Profil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="{{ path('banque') }}">Transfert Banque</a>
