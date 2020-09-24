@@ -16,8 +16,14 @@ class ProfilController extends AbstractController
 
         $user = $this->getUser('username');
 
+        $monaie = "SELECT `users_money` WHERE users_name='$user'";
+        var_dump($monaie);
+
+//        $monaie = $requeteMonaie->fetchAll();
+
         return $this->render('profil/index.html.twig', [
             'controller_name' => 'ProfilController',
+            'argent' => $monaie
         ]);
     }
 }
