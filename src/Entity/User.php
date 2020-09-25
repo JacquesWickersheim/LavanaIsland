@@ -37,9 +37,13 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\OneToOne(targetEntity=Users::class, mappedBy="user_id", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=Users::class, inversedBy="user", cascade={"persist", "remove"})
      */
-    private $users;
+    private $name_serveur;
+
+
+
+
 
     public function getId(): ?int
     {
@@ -135,6 +139,66 @@ class User implements UserInterface
         if ($users->getUserId() !== $newUser_id) {
             $users->setUserId($newUser_id);
         }
+
+        return $this;
+    }
+
+    public function getUsersId(): ?Users
+    {
+        return $this->users_id;
+    }
+
+    public function setUsersId(?Users $users_id): self
+    {
+        $this->users_id = $users_id;
+
+        // set (or unset) the owning side of the relation if necessary
+        $newUser_id = null === $users_id ? null : $this;
+        if ($users_id->getUserId() !== $newUser_id) {
+            $users_id->setUserId($newUser_id);
+        }
+
+        return $this;
+    }
+
+    public function getName(): ?users
+    {
+        return $this->name;
+    }
+
+    public function setName(?users $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getUsersite(): ?Users
+    {
+        return $this->usersite;
+    }
+
+    public function setUsersite(?Users $usersite): self
+    {
+        $this->usersite = $usersite;
+
+        // set (or unset) the owning side of the relation if necessary
+        $newUsername = null === $usersite ? null : $this;
+        if ($usersite->getUsername() !== $newUsername) {
+            $usersite->setUsername($newUsername);
+        }
+
+        return $this;
+    }
+
+    public function getNameServeur(): ?users
+    {
+        return $this->name_serveur;
+    }
+
+    public function setNameServeur(?users $name_serveur): self
+    {
+        $this->name_serveur = $name_serveur;
 
         return $this;
     }

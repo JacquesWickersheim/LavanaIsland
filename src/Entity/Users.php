@@ -18,12 +18,12 @@ class Users
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $identifier;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $license;
 
@@ -33,7 +33,7 @@ class Users
     private $money;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $name;
 
@@ -43,7 +43,7 @@ class Users
     private $skin;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $job;
 
@@ -68,7 +68,7 @@ class Users
     private $loadout;
 
     /**
-     * @ORM\Column(type="string", length=200, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $position;
 
@@ -83,12 +83,12 @@ class Users
     private $permission_level;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $group;
 
     /**
-     * @ORM\Column(type="smallint", nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $is_dead;
 
@@ -123,7 +123,7 @@ class Users
     private $last_property;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $status;
 
@@ -138,14 +138,18 @@ class Users
     private $phone_number;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $hair;
 
     /**
-     * @ORM\OneToOne(targetEntity=user::class, inversedBy="users", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=User::class, mappedBy="name_serveur", cascade={"persist", "remove"})
      */
-    private $user_id;
+    private $user;
+
+
+
+
 
     public function getId(): ?int
     {
@@ -308,14 +312,14 @@ class Users
         return $this;
     }
 
-    public function getGroupe(): ?string
+    public function getGroup(): ?string
     {
-        return $this->groupe;
+        return $this->group;
     }
 
-    public function setGroupe(?string $groupe): self
+    public function setGroup(?string $group): self
     {
-        $this->groupe = $groupe;
+        $this->group = $group;
 
         return $this;
     }
@@ -409,7 +413,7 @@ class Users
         return $this->status;
     }
 
-    public function setStatus(string $status): self
+    public function setStatus(?string $status): self
     {
         $this->status = $status;
 
@@ -445,21 +449,27 @@ class Users
         return $this->hair;
     }
 
-    public function setHair(string $hair): self
+    public function setHair(?string $hair): self
     {
         $this->hair = $hair;
 
         return $this;
     }
 
-    public function getUserId(): ?user
+    public function getUser(): ?User
     {
-        return $this->user_id;
+        return $this->user;
     }
 
-    public function setUserId(?user $user_id): self
+    public function setUser(?User $user): self
     {
-        $this->user_id = $user_id;
+        $this->user = $user;
+
+        // set (or unset) the owning side of the relation if necessary
+        $newName_serveur = null === $user ? null : $this;
+        if ($user->getNameServeur() !== $newName_serveur) {
+            $user->setNameServeur($newName_serveur);
+        }
 
         return $this;
     }

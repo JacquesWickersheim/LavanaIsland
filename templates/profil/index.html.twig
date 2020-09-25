@@ -4,13 +4,11 @@
 
 {% block body %}
 <div>
-    <h1>
-        Monaie:
-    </h1>
-    {% for argent in argent %}
-    <p>
-        {{ argent.argent }}
-    </p>
+    {% for user in user %}
+        <p>Nom: {{ user.lastname }}</p>
+        <p>Prénom: {{ user.firstname }}</p>
+        <p>Compte en Banque: {{ user.bank }}</p>
+        <p>Métier: {{ user.job }}</p>
     {% endfor %}
 </div>
 {% endblock %}

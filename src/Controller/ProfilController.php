@@ -2,7 +2,8 @@
 
 namespace App\Controller;
 
-use App\Repository\UserRepository;
+
+use App\Repository\UsersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -11,19 +12,20 @@ class ProfilController extends AbstractController
     /**
      * @Route("/profil/{user}", name="profil")
      */
-    public function index()
+    public function index(UsersRepository $UsersRepository)
     {
 
-        $user = $this->getUser('username');
+        $user = $this->getUser()->getUsername();
 
-        $monaie = "SELECT `users_money` WHERE users_name='$user'";
-        var_dump($monaie);
+        $profile = $UsersRepository->findBy([
+            'name' => $user
+        ]);
 
-//        $monaie = $requeteMonaie->fetchAll();
+        dump($profile);
 
         return $this->render('profil/index.html.twig', [
             'controller_name' => 'ProfilController',
-            'argent' => $monaie
+            'user' => $profile
         ]);
     }
 }
