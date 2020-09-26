@@ -11,11 +11,10 @@
     <body>
         {% block body %}
             <div class="container">
-                {% for label, messages in app.flashes %}
-                    <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
-                        {{ message }}
-                        <button type="button" class="close" data-dismiss="alert"><span>x</span></button>
-                    </div>
+                {% for messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">{{ message }}<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+                    {% endfor %}
                 {% endfor %}
             </div>
         {% endblock %}

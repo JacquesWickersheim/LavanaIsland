@@ -17,22 +17,22 @@
                     <a class="nav-link" href="{{ path('profil', {user: user.username}) }}">Mon Profil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="{{ path('banque') }}">Transfert Banque</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link disabled" href="{{ path('gestionConcess') }}">Gestion Concessionnaire</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="{{ path('gestionCompteGouv') }}">Gestion Comptes Gouvernement</a>
+                    <a class="nav-link disabled" href="{{ path('gestionGouv') }}">Gestion Gouvernement</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="{{ path('gestionComptePolice') }}">Gestion Comptes Police</a>
+                    <a class="nav-link disabled" href="{{ path('gestionPolice') }}">Gestion Police</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="{{ path('gestionCompteAmbu') }}">Gestion Comptes Ambulance</a>
+                    <a class="nav-link disabled" href="{{ path('gestionAmbu') }}">Gestion Ambulance</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="{{ path('gestionCompteMeca') }}">Gestion Comptes Mécano</a>
+                    <a class="nav-link disabled" href="{{ path('gestionMeca') }}">Gestion Mécano</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('patronConcess') }}">Patron concess</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="{{ path('app_logout') }}">Se Déconnecter</a>
@@ -40,9 +40,6 @@
                 {% elseif is_granted('ROLE_CIVIL') %}
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ path('profil', {user: user.username}) }}">Mon Profil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="{{ path('banque') }}">Transfert Banque</a>
                 </li>
                 <li>
                     <a class="nav-link disabled" href="{{ path('concess') }}">Le Concessionnaire</a>
