@@ -12,8 +12,9 @@ class ReglementController extends AbstractController
      */
     public function index()
     {
+        $user = $this->getUser('username');
         return $this->render('reglement/index.html.twig', [
-
+            'user' => $user
         ]);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ConcessRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -41,6 +42,11 @@ class Concess
      * @ORM\Column(type="integer")
      */
     private $puissance;
+
+//    public function __construct()
+//    {
+//        $this->Concess = new ArrayCollection();
+//    }
 
     public function getId(): ?int
     {

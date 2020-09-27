@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="{{ path('accueil') }}">Logo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBar" aria-controls="navBar" aria-expanded="false" aria-label="Ouvrir le menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navBar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('accueil') }}">Accueil</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('reglement') }}">Règlement</a>
+                </li>
+                {% if is_granted('ROLE_STAFF') %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('profil', {user: user.username}) }}">Mon Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="{{ path('gestionConcess') }}">Gestion Concessionnaire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="{{ path('gestionGouv') }}">Gestion Gouvernement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="{{ path('gestionPolice') }}">Gestion Police</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="{{ path('gestionAmbu') }}">Gestion Ambulance</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="{{ path('gestionMeca') }}">Gestion Mécano</a>
+                    </li>
+                {% elseif is_granted('ROLE_PATRONCONCESS') %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('patronConcess', { id: 0 }) }}">Patron concess</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="{{ path('app_logout') }}">Se Déconnecter</a>
+                    </li>
+                {% elseif is_granted('ROLE_CIVIL') %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('profil', {user: user.username}) }}">Mon Profil</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('concess') }}">Le Concessionnaire</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('app_logout') }}">Se Déconnecter</a>
+                    </li>
+                {% else %}
+                    <a class="nav-link btn btn-primary text-white" href="{{ path('app_register') }}">S'inscrire</a>
+                    <a class="nav-link btn btn-primary text-white ml-2" href="{{ path('app_login') }}">Se Connecter</a>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

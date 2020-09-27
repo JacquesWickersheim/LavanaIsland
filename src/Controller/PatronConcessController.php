@@ -12,12 +12,21 @@ use Symfony\Component\Routing\Annotation\Route;
 class PatronConcessController extends AbstractController
 {
     /**
-     * @Route("/patronConcess", name="patronConcess")
+     * @Route("/patronConcess/{id}", name="patronConcess")
      */
-    public function index(Request $request, ConcessRepository $concessRepository)
+    public function index($id, Request $request, ConcessRepository $concessRepository)
     {
 
-        $voiture = new Concess();
+        $user = $this->getUser('username');
+
+        if($id){
+            $voiture = $concessRepository->find($id);
+            $nouveau = false;
+        }else{
+            $voiture = new Concess();
+            $nouveau = true;
+        }
+
         $formulaireVoiture = $this->createForm(ConcessType::class, $voiture);
         $formulaireVoiture->handleRequest($request);
         if($formulaireVoiture->isSubmitted() && $formulaireVoiture->isValid()){
@@ -35,6 +44,8 @@ class PatronConcessController extends AbstractController
         return $this->render('patron_concess/index.html.twig', [
             'controller_name' => 'PatronConcessController',
             'voiture' => $formulaireVoiture->createView(),
+            'nouveau' => $nouveau,
+            'user' => $user
         ]);
     }
 }

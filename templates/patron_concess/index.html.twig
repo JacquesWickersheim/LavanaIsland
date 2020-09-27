@@ -3,11 +3,14 @@
 {% block title %}Hello PatronConcessController!{% endblock %}
 
 {% block body %}
+    {% include 'accueil/header.html.twig' %}
 <div>
     <h1>Formulaire Véhicule</h1>
     {{ form_start(voiture) }}
         {{ form_widget(voiture) }}
-            <button type="submit" class="btn btn-primary text-center">Ajouter un véhicule</button>
+        <a href="{{ path('patronConcess', {id: 0}) }}">
+            <button type="submit" class="btn btn-primary text-center">{{ nouveau ? "Créer" : "Modifier" }} un véhicule</button>
+        </a>
     {{ form_end(voiture) }}
 </div>
 {% endblock %}

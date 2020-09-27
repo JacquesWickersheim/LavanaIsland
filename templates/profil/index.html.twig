@@ -3,6 +3,7 @@
 {% block title %}Hello ProfilController!{% endblock %}
 
 {% block body %}
+        {% include 'accueil/header.html.twig' %}
 <div>
     {% for user in user %}
         <p>Nom: {{ user.lastname }}</p>

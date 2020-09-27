@@ -12,8 +12,10 @@ class GestionConcessController extends AbstractController
      */
     public function index()
     {
+        $user = $this->getUser('username');
         return $this->render('gestion_concess/index.html.twig', [
             'controller_name' => 'GestionConcessController',
+            'user' => $user
         ]);
     }
 }

@@ -12,8 +12,10 @@ class GestionMecaController extends AbstractController
      */
     public function index()
     {
+        $user = $this->getUser('username');
         return $this->render('gestion_meca/index.html.twig', [
             'controller_name' => 'GestionMecaController',
+            'user' => $user
         ]);
     }
 }

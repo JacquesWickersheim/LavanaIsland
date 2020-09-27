@@ -12,8 +12,10 @@ class MentionsController extends AbstractController
      */
     public function index()
     {
+        $user = $this->getUser('username');
         return $this->render('mentions/index.html.twig', [
-            'titreSite' => 'Lavana Island'
+            'titreSite' => 'Lavana Island',
+            'user' => $user
         ]);
     }
 }

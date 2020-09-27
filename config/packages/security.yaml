@@ -38,6 +38,7 @@ security:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
         - { path: ^/staff/, roles: ROLE_STAFF }
+        - { path: ^/patronConcess, roles: ROLE_PATRONCONCESS}
         - { path: ^/civil/, roles: ROLE_CIVIL }
     role_hierarchy:
         ROLE_USER: IS_AUTHENTIFICATED_ANONYMOUSLY

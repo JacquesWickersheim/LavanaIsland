@@ -12,8 +12,10 @@ class GestionPoliceController extends AbstractController
      */
     public function index()
     {
+        $user = $this->getUser('username');
         return $this->render('gestion_police/index.html.twig', [
             'controller_name' => 'GestionPoliceController',
+            'user' => $user
         ]);
     }
 }

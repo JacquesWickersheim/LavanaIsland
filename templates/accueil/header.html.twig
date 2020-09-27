@@ -9,8 +9,8 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ path('accueil') }}">Accueil</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="{{ path('reglement') }}">Règlement</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('reglement') }}">Règlement</a>
                 </li>
                 {% if is_granted('ROLE_STAFF') %}
                 <li class="nav-item active">
@@ -31,18 +31,19 @@
                 <li class="nav-item">
                     <a class="nav-link disabled" href="{{ path('gestionMeca') }}">Gestion Mécano</a>
                 </li>
+                {% elseif is_granted('ROLE_PATRONCONCESS') %}
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('patronConcess') }}">Patron concess</a>
+                    <a class="nav-link" href="{{ path('patronConcess', { id: 0 }) }}">Patron concess</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="{{ path('app_logout') }}">Se Déconnecter</a>
                 </li>
                 {% elseif is_granted('ROLE_CIVIL') %}
+{#                <li class="nav-item active">#}
+{#                    <a class="nav-link" href="{{ path('profil', {user: user.username}) }}">Mon Profil</a>#}
+{#                </li>#}
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('profil', {user: user.username}) }}">Mon Profil</a>
-                </li>
-                <li>
-                    <a class="nav-link disabled" href="{{ path('concess') }}">Le Concessionnaire</a>
+                    <a class="nav-link" href="{{ path('concess') }}">Le Concessionnaire</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ path('app_logout') }}">Se Déconnecter</a>
